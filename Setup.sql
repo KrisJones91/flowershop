@@ -1,23 +1,26 @@
 using flowers2171;
 
--- CREATE TABLE bricks
+-- CREATE TABLE flowers
 -- (
 --   id INT AUTO_INCREMENT,
 --   name VARCHAR(255),
+--   description VARCHAR(255),
 --   color VARCHAR(255),
+--   price DECIMAL(5,2)
 
 --   PRIMARY KEY (id);
 -- );
 
--- CREATE TABLE kits
+-- CREATE TABLE boquets
 -- (
 --   id INT AUTO_INCREMENT,
 --   name VARCHAR(255),
---   instructions VARCHAR(255),
---   price DECIMAL(6,2),
+--   description VARCHAR(255),
+--   color VARCHAR(255),
+--   price DECIMAL(5,2),
 
 --   PRIMARY KEY (id);
 -- );
 
--- TRUNCATE TABLE kits;
--- TRUNCATE TABLE bricks;
+-- TRUNCATE TABLE flowers;
+-- TRUNCATE TABLE boquets;
