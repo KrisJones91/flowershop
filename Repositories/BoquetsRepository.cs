@@ -3,7 +3,7 @@ using System.Data;
 using Dapper;
 using flowershop.Models;
 
-namespace Boquetshop.Repositories
+namespace flowershop.Repositories
 {
     public class BoquetsRepository
     {

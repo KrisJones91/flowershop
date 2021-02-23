@@ -59,5 +59,17 @@ namespace flowershop.Repositories
             string sql = "DELETE FROM Flowers WHERE id = @id LIMIT 1";
             _db.Execute(sql, new { id });
         }
+
+        internal IEnumerable<Flower> GetFlowersByBoquetId(int flowerId)
+        {
+            string sql = @"
+                SELECT f.*,
+                fb.id as FlowBoId 
+                FROM FlowBos fb
+                JOIN flowers f ON f.id = fb.flowerId
+                WHERE flowerId = @flowerId";
+
+            return _db.Query<FlowBoViewModel>(sql, new { flowerId });
+        }
     }
 }
