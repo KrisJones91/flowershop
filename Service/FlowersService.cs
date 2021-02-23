@@ -9,10 +9,12 @@ namespace flowershop.Service
     public class FlowersService
     {
         private readonly FlowersRepository _repo;
-
-        public FlowersService(FlowersRepository repo)
+        private readonly BoquetsRepository _brepo;
+        public FlowersService(FlowersRepository repo, BoquetsRepository brepo)
         {
             _repo = repo;
+            _brepo = brepo;
+
         }
 
         internal IEnumerable<Flower> GetAll()
@@ -52,6 +54,16 @@ namespace flowershop.Service
             var data = GetById(id);
             _repo.Delete(id);
             return "Deleted Flower";
+        }
+
+        internal IEnumerable<Flower> GetFlowersByBoquetId(int flowerId)
+        {
+            Boquet exists = _brepo.GetById(flowerId);
+            if (exists == null)
+            {
+                throw new Exception("Invalid Id");
+            }
+            return _repo.GetFlowersByBoquetId(flowerId);
         }
     }
 }
