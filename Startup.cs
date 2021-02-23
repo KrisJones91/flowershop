@@ -34,10 +34,13 @@ namespace flowershop
             //Repos
             services.AddTransient<FlowersRepository>();
             services.AddTransient<BoquetsRepository>();
+            services.AddTransient<FlowBosRepository>();
+
 
             //Services
             services.AddTransient<FlowersService>();
             services.AddTransient<BoquetsService>();
+            services.AddTransient<FlowBosService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
