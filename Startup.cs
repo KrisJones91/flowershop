@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using flowershop.Repositories;
@@ -13,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using MySqlConnector;
 
 namespace flowershop
 {
@@ -42,6 +44,13 @@ namespace flowershop
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "flowershop", Version = "v1" });
             });
+        }
+
+
+        private IDbConnection CreateDbConnection()
+        {
+            string connectString = Configuration["db:gearhost"];
+            return new MySqlConnection(connectString);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
