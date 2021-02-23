@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace flowershop.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class FlowersController : ControllerBase
     {
         private readonly FlowersService _service;

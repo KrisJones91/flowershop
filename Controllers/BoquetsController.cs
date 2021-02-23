@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Boquetshop.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class BoquetsController : ControllerBase
     {
         private readonly BoquetsService _service;
