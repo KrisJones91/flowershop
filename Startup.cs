@@ -42,6 +42,9 @@ namespace flowershop
             services.AddTransient<BoquetsService>();
             services.AddTransient<FlowBosService>();
 
+            //Scoped
+            services.AddScoped<IDbConnection>(x => CreateDbConnection());
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

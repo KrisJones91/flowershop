@@ -1,14 +1,13 @@
-using flowers2171;
+use flowers2171;
 
--- CREATE TABLE flowers
--- (
---   id INT AUTO_INCREMENT,
---   name VARCHAR(255),
+-- CREATE TABLE flowers (
+--   id INT NOT NULL AUTO_INCREMENT,
+--   name VARCHAR(255) NOT NULL,
 --   description VARCHAR(255),
 --   color VARCHAR(255),
---   price DECIMAL(5,2)
+--   price DECIMAL(5,2),
 
---   PRIMARY KEY (id);
+--   PRIMARY KEY(id)
 -- );
 
 -- CREATE TABLE boquets
@@ -19,7 +18,7 @@ using flowers2171;
 --   color VARCHAR(255),
 --   price DECIMAL(5,2),
 
---   PRIMARY KEY (id);
+--   PRIMARY KEY (id)
 -- );
 
 -- TRUNCATE TABLE flowers;
